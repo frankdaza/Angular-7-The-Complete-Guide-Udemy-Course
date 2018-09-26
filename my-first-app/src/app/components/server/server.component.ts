@@ -7,9 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServerComponent implements OnInit {
 
-  public serverId: number = 10;
-  public serverStatus: string = 'offline';
-
   constructor() { }
 
   ngOnInit() {
