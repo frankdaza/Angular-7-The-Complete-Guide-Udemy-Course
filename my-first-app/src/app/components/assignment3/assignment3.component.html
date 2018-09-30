@@ -1,0 +1,20 @@
+<p *ngIf="display">
+  {{ message }}
+</p>
+
+<button 
+  (click)="onDisplay()"
+  class="btn btn-primary">
+  Display Details
+</button>
+
+<br><br>
+
+<ul>
+  <li 
+    *ngFor="let item of listParagraphs"
+    [ngStyle]="{'background-color': item >= 5 ? 'blue' : 'transparent'}"
+    [ngClass]="{'newColor': item >= 5}">
+    {{ item }}
+  </li>
+</ul>
