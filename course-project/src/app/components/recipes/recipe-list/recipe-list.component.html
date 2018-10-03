@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col">
+  <div class="col-6">
     <button class="btn btn-success">New Recipe</button>
   </div>
 </div>
@@ -7,13 +7,14 @@
 <hr>
 
 <div class="row" >
-  <a href="" class="list-group-item clearfix"
+  <a href="#" class="list-group-item clearfix"
     style="color: inherit;"
     *ngFor="let recipe of recipes">
     <div class="col">
       <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
       <p class="list-group-item-text">{{ recipe.description }}</p>
     </div>    
+    
     <div class="col">
       <img 
         src="{{ recipe.imagePath }}" 
