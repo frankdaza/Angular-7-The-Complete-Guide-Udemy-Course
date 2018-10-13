@@ -1,2 +1,8 @@
 <p>User with ID {{ user.id }} loaded.</p>
 <p>User name is {{ user.name }}</p>
+
+<button 
+  class="btn btn-primary"
+  [routerLink]="[ '/users', 10, 'Anna Daza' ]">
+  Load Anna (10)
+</button>
