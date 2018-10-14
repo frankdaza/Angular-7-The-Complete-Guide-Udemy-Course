@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './auth.guard';
+import { DialogService } from './services/dialog.service';
 
 
 
@@ -38,7 +39,8 @@ import { AuthGuard } from './auth.guard';
   providers: [
     ServersService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    DialogService
   ],
   bootstrap: [AppComponent]
 })
