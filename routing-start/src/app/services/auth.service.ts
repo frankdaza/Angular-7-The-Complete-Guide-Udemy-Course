@@ -18,12 +18,16 @@ export class AuthService {
   login(): Observable<boolean> {
     return of(true).pipe(
       delay(1000),
-      tap(val => this.isLoggedIn = true)
+      tap(val => {
+        this.isLoggedIn = true;
+        console.log(`El usuario se ha logueado exitosamente. ${this.isLoggedIn}`);
+      })      
     );
   }
 
   logout(): void {
     this.isLoggedIn = false;
+    console.log(`El usuario ha cerrado sesión exitosamente. ${this.isLoggedIn}`);
   }
   
 } 
