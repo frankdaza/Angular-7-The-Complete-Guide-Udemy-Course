@@ -15,6 +15,7 @@ export class EditServerComponent implements OnInit, OnDestroy {
   private serverName = '';
   private serverStatus = '';
   private subscription: Subscription;
+  private allowEdit: boolean;
 
   constructor(
     private serversService: ServersService,
@@ -22,21 +23,23 @@ export class EditServerComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
+    this.allowEdit = false; 
+
     this.subscription = this.activedRoute.params.subscribe(
       params => {
-        console.log(params['id']);
+        
       }
     );
 
     this.subscription = this.activedRoute.queryParams.subscribe(
       params => {
-        console.log(params);
+        this.allowEdit = params['allowEdit'] === '1' ? true : false;
       }
     );
 
     this.subscription = this.activedRoute.fragment.subscribe(
       params => {
-        console.log(params);
+        
       }
     );
 
