@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './auth.guard';
 import { DialogService } from './services/dialog.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 
@@ -28,7 +29,8 @@ import { DialogService } from './services/dialog.service';
     UserComponent,
     EditServerComponent,
     ServerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
