@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
 export class AppComponent {
 
   defaultQuestion: string = 'pet';
+  answer: string = '';
   
   suggestUserName() {
     const suggestedName = 'Superuser';
