@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <form>
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)">
         <div id="user-data">
           <div class="form-group">
             <label for="username">Username</label>
             <input 
               ngModel name="username" 
-              type="text" id="username" class="form-control">
+              type="text" id="username" class="form-control" required>
           </div>
           <button class="btn btn-default" type="button">Suggest an Username</button>
           <div class="form-group">
