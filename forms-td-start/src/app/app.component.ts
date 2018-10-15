@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -8,17 +8,26 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
 
+  @ViewChild('form')
+  signupForm: NgForm;
   defaultQuestion: string = 'pet';
   answer: string = '';
   genders = ['male', 'female'];
   
+  
+
   suggestUserName() {
     const suggestedName = 'Superuser';
+    this.signupForm.form.patchValue({
+      userData: {
+        username: suggestedName
+      }
+    });
   }
 
-  onSubmit(form: NgForm) {
-    console.log(form.valid);
-    console.log(form.value);
+  onSubmit() {
+    console.log(this.signupForm.valid);
+    console.log(this.signupForm.value);
   }
 
 }
