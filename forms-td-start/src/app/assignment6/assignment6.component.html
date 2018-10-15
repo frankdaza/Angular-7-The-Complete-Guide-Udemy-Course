@@ -1,0 +1,23 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label>Email</label>
+    <input name="email" ngModel class="form-control" type="email" email required>
+  </div>
+
+  <div class="form-group">
+    <label>Choose a Subscription</label>
+    <select name="subscription" [ngModel]="defaultSubscription" class="form-control" required>
+      <option *ngFor="let sub of subscriptions" [value]="sub">{{ sub }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <input name="password" ngModel type="password" class="form-control" required>
+  </div>
+
+  <button 
+    [disabled]="!form.valid" 
+    class="btn btn-primary" type="submit">Submit</button>
+</form>
