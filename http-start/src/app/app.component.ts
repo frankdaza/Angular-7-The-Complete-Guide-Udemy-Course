@@ -11,6 +11,7 @@ import { Response } from '@angular/http';
 export class AppComponent implements OnDestroy {
 
   subscription: Subscription;
+  appName = this.serverService.getAppName();
 
   servers = [
     {
