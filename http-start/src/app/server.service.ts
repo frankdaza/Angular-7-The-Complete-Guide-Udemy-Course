@@ -23,7 +23,13 @@ export class ServerService {
   getServers(): Observable<any> {
     return this.http.get('https://udemy-ng-http-96827.firebaseio.com/data.json')
       .pipe( map((response: Response) => {
-        return response.json();
+        const data = response.json();
+
+        for (const server of data) {
+          server.name = 'FETCHED_' + server.name;
+        }
+
+        return data;
       }) )      
   }
 
