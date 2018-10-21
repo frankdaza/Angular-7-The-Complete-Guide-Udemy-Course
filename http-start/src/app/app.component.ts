@@ -55,9 +55,8 @@ export class AppComponent implements OnDestroy {
 
   onGet() {
     this.subscription = this.serverService.getServers()
-      .subscribe((response: Response) => {
-        const data = response.json();
-        console.log(data);
+      .subscribe((servers: Array<any>) => {        
+        console.log(servers);
       }, error => {
         console.log(error);
       });
