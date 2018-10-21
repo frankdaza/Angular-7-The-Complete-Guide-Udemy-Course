@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ServerService } from './server.service';
 import { Subscription } from 'rxjs';
+import { Response } from '@angular/http';
 
 @Component({
   selector: 'app-root',
@@ -47,6 +48,16 @@ export class AppComponent implements OnDestroy {
     this.subscription = this.serverService.storeServers(this.servers)
       .subscribe(response => {
         console.log(response);
+      }, error => {
+        console.log(error);
+      });
+  }
+
+  onGet() {
+    this.subscription = this.serverService.getServers()
+      .subscribe((response: Response) => {
+        const data = response.json();
+        console.log(data);
       }, error => {
         console.log(error);
       });

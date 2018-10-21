@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,13 @@ export class ServerService {
 
   constructor(private http: Http) { }
 
-  storeServers(servers: Array<any>) {
+  storeServers(servers: Array<any>): Observable<any> {
     return this.http.post('https://udemy-ng-http-96827.firebaseio.com/data.json', 
       servers, { headers: this.headers });
+  }
+
+  getServers(): Observable<any> {
+    return this.http.get('https://udemy-ng-http-96827.firebaseio.com/data.json');
   }
 
 }
