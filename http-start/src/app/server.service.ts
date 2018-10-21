@@ -12,7 +12,10 @@ export class ServerService {
   constructor(private http: Http) { }
 
   storeServers(servers: Array<any>): Observable<any> {
-    return this.http.post('https://udemy-ng-http-96827.firebaseio.com/data.json', 
+    // return this.http.post('https://udemy-ng-http-96827.firebaseio.com/data.json', 
+    //   servers, { headers: this.headers });
+
+    return this.http.put('https://udemy-ng-http-96827.firebaseio.com/data.json', 
       servers, { headers: this.headers });
   }
 
